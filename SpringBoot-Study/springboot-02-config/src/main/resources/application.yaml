@@ -1,0 +1,13 @@
+person:
+  name: herwin@qq.com
+  age: 18
+  happy: true
+  birth: 1998/07/24
+  maps: {ywh: lxy,hxy: ywh,han: ywh}
+  lists:
+    - lxy
+    - hxy
+    - han
+  dog:
+    name: wangcai
+    age: 3
