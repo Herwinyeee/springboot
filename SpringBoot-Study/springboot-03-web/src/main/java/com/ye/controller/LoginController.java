@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
-
+    static boolean signOut = false;
     @RequestMapping("/user/login")
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
@@ -26,7 +26,14 @@ public class LoginController {
             return "redirect:/main.html";
         }else {
             model.addAttribute("msg", "username or password were wrong please check ");
-            return "index";
+            return "/index";
         }
+    }
+    @RequestMapping("/user/logout")
+    public String logout(HttpSession seesion){
+
+        seesion.invalidate();
+        signOut=true;
+        return "redirect:/index.html";
     }
 }
