@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ye.mapper.UserMapper">
+    <select id="queryUserList" resultType="com.ye.pojo.User">
+        select * from user
+    </select>
+    <select id="queryUserById" resultType="com.ye.pojo.User">
+        select * from user where id = #{id}
+    </select>
+    <update id="updateUser" parameterType="com.ye.pojo.User">
+        update user set name=#{name}, id=#{id} where id = #{id}
+    </update>
+
+    <insert id="addUser" parameterType="com.ye.pojo.User">
+        insert into user (id,name) values(#{id}, #{name})
+    </insert>
+
+    <delete id="deleteUserById" parameterType="int">
+        delete  from user where id=#{id}
+    </delete>
+</mapper>
